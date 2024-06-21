@@ -229,10 +229,10 @@ namespace Calculator
             this.button13.FlatAppearance.BorderSize = 0;
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(360, 542);
+            this.button13.Location = new System.Drawing.Point(360, 643);
             this.button13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(96, 193);
+            this.button13.Size = new System.Drawing.Size(96, 92);
             this.button13.TabIndex = 15;
             this.button13.Text = "=";
             this.button13.UseVisualStyleBackColor = false;
@@ -243,7 +243,7 @@ namespace Calculator
             this.button14.FlatAppearance.BorderSize = 0;
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Location = new System.Drawing.Point(360, 236);
+            this.button14.Location = new System.Drawing.Point(360, 338);
             this.button14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(96, 92);
@@ -257,7 +257,7 @@ namespace Calculator
             this.button15.FlatAppearance.BorderSize = 0;
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(360, 440);
+            this.button15.Location = new System.Drawing.Point(360, 542);
             this.button15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(96, 92);
@@ -271,7 +271,7 @@ namespace Calculator
             this.button16.FlatAppearance.BorderSize = 0;
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button16.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.Location = new System.Drawing.Point(360, 338);
+            this.button16.Location = new System.Drawing.Point(360, 440);
             this.button16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(96, 92);
@@ -357,10 +357,10 @@ namespace Calculator
             this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button18.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button18.Image = global::Calculator.Properties.Resources.backspace;
-            this.button18.Location = new System.Drawing.Point(141, 134);
+            this.button18.Location = new System.Drawing.Point(358, 236);
             this.button18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(315, 92);
+            this.button18.Size = new System.Drawing.Size(96, 92);
             this.button18.TabIndex = 17;
             this.button18.UseVisualStyleBackColor = false;
             // 
