@@ -23,5 +23,22 @@ namespace Calculator
         {
 
         }
+
+        private void button20_MouseEnter(object sender, EventArgs e)
+        {
+            button20.BackColor = Color.Red;
+            button20.ForeColor = Color.Black;
+        }
+
+        private void button20_MouseLeave(object sender, EventArgs e)
+        {
+            button20.BackColor = Color.Transparent;
+            button20.ForeColor = Color.White;
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
