@@ -17,23 +17,38 @@ namespace Calculator
             InitializeComponent();
         }
 
-        private double _number = 0;
+        private double _1stNumber = 0,_2ndNumber = 0 , _Result = 0;
+        private enum Turns { firstNumber = 1 , SecondNumber=2 , Result=3}
+        Turns _enTurn = Turns.firstNumber;
 
-        private void button12_Click(object sender, EventArgs e)
+        private void PressingDigits(object sender , EventArgs e)
         {
+            Button btn = (Button)sender;
+            double.TryParse(btn.Text, out double temp);
 
+            //to shift the 1stnumber to left
+            _1stNumber *= 10;
+            _1stNumber += temp;
+
+            textBox1.Text = _1stNumber.ToString();
         }
 
         private void button20_MouseEnter(object sender, EventArgs e)
         {
-            button20.BackColor = Color.Red;
-            button20.ForeColor = Color.Black;
+            btnClose.BackColor = Color.Red;
+            btnClose.ForeColor = Color.Black;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            _1stNumber = _2ndNumber = 0;
+            textBox1.Text = "0";
         }
 
         private void button20_MouseLeave(object sender, EventArgs e)
         {
-            button20.BackColor = Color.Transparent;
-            button20.ForeColor = Color.White;
+            btnClose.BackColor = Color.Transparent;
+            btnClose.ForeColor = Color.White;
         }
 
         private void button20_Click(object sender, EventArgs e)
