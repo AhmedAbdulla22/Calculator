@@ -283,6 +283,20 @@ namespace Calculator
             btnEqual_Click(sender, e);
         }
 
+        private void btnSigns_Click(object sender, EventArgs e)
+        {
+            if (_enTurn == Turns.firstNumber)
+            {
+                _1stNumber *= -1;               
+            }
+            else if(_enTurn == Turns.SecondNumber)
+            {
+                 _2ndNumber *= -1;
+            }
+
+            UpdateTextLable();
+        }
+
         private void button20_MouseLeave(object sender, EventArgs e)
         {
             btnClose.BackColor = Color.Transparent;

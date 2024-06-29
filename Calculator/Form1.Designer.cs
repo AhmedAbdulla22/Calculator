@@ -50,10 +50,10 @@ namespace Calculator
             this.btnClose = new System.Windows.Forms.Button();
             this.btnModule = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSquare = new System.Windows.Forms.Button();
             this.btnX2 = new System.Windows.Forms.Button();
             this.btnBackspace = new System.Windows.Forms.Button();
             this.btnDivision = new System.Windows.Forms.Button();
-            this.btnSquare = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -221,6 +221,7 @@ namespace Calculator
             this.btnSigns.TabIndex = 10;
             this.btnSigns.Text = "-/+";
             this.btnSigns.UseVisualStyleBackColor = false;
+            this.btnSigns.Click += new System.EventHandler(this.btnSigns_Click);
             // 
             // btnDot
             // 
@@ -367,6 +368,21 @@ namespace Calculator
             this.panel1.Size = new System.Drawing.Size(495, 787);
             this.panel1.TabIndex = 23;
             // 
+            // btnSquare
+            // 
+            this.btnSquare.BackColor = System.Drawing.Color.Silver;
+            this.btnSquare.FlatAppearance.BorderSize = 0;
+            this.btnSquare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSquare.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSquare.Image = global::Calculator.Properties.Resources.formula_2__1_;
+            this.btnSquare.Location = new System.Drawing.Point(150, 151);
+            this.btnSquare.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSquare.Name = "btnSquare";
+            this.btnSquare.Size = new System.Drawing.Size(101, 92);
+            this.btnSquare.TabIndex = 24;
+            this.btnSquare.UseVisualStyleBackColor = false;
+            this.btnSquare.Click += new System.EventHandler(this.btnSquare_Click);
+            // 
             // btnX2
             // 
             this.btnX2.BackColor = System.Drawing.Color.Silver;
@@ -412,21 +428,6 @@ namespace Calculator
             this.btnDivision.Tag = "/";
             this.btnDivision.UseVisualStyleBackColor = false;
             this.btnDivision.Click += new System.EventHandler(this.PressingOp);
-            // 
-            // btnSquare
-            // 
-            this.btnSquare.BackColor = System.Drawing.Color.Silver;
-            this.btnSquare.FlatAppearance.BorderSize = 0;
-            this.btnSquare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSquare.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSquare.Image = global::Calculator.Properties.Resources.formula_2__1_;
-            this.btnSquare.Location = new System.Drawing.Point(150, 151);
-            this.btnSquare.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSquare.Name = "btnSquare";
-            this.btnSquare.Size = new System.Drawing.Size(101, 92);
-            this.btnSquare.TabIndex = 24;
-            this.btnSquare.UseVisualStyleBackColor = false;
-            this.btnSquare.Click += new System.EventHandler(this.btnSquare_Click);
             // 
             // Form1
             // 
