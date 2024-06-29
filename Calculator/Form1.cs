@@ -136,6 +136,11 @@ namespace Calculator
             Button btn = (Button)sender;
             double.TryParse(btn.Text, out double temp);
 
+            if(_enTurn == Turns.firstNumber && _op == Op.X2 || _op == Op.Square)
+            {
+                Reset();
+            }
+
             if (_enTurn == Turns.firstNumber)
             {
                 //to shift the 1stnumber to left
