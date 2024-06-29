@@ -258,8 +258,10 @@ namespace Calculator
             this.btnMultiplication.Name = "btnMultiplication";
             this.btnMultiplication.Size = new System.Drawing.Size(96, 92);
             this.btnMultiplication.TabIndex = 14;
+            this.btnMultiplication.Tag = "*";
             this.btnMultiplication.Text = "x";
             this.btnMultiplication.UseVisualStyleBackColor = false;
+            this.btnMultiplication.Click += new System.EventHandler(this.PressingOp);
             // 
             // btnSubtraction
             // 
@@ -272,8 +274,10 @@ namespace Calculator
             this.btnSubtraction.Name = "btnSubtraction";
             this.btnSubtraction.Size = new System.Drawing.Size(96, 92);
             this.btnSubtraction.TabIndex = 13;
+            this.btnSubtraction.Tag = "-";
             this.btnSubtraction.Text = "-";
             this.btnSubtraction.UseVisualStyleBackColor = false;
+            this.btnSubtraction.Click += new System.EventHandler(this.PressingOp);
             // 
             // btnSummation
             // 
@@ -286,8 +290,10 @@ namespace Calculator
             this.btnSummation.Name = "btnSummation";
             this.btnSummation.Size = new System.Drawing.Size(96, 92);
             this.btnSummation.TabIndex = 12;
+            this.btnSummation.Tag = "+";
             this.btnSummation.Text = "+";
             this.btnSummation.UseVisualStyleBackColor = false;
+            this.btnSummation.Click += new System.EventHandler(this.PressingOp);
             // 
             // btnClear
             // 
@@ -344,8 +350,10 @@ namespace Calculator
             this.btnModule.Name = "btnModule";
             this.btnModule.Size = new System.Drawing.Size(101, 92);
             this.btnModule.TabIndex = 21;
+            this.btnModule.Tag = "%";
             this.btnModule.Text = "%";
             this.btnModule.UseVisualStyleBackColor = false;
+            this.btnModule.Click += new System.EventHandler(this.PressingOp);
             // 
             // btnX2
             // 
@@ -374,6 +382,7 @@ namespace Calculator
             this.btnBackspace.Size = new System.Drawing.Size(96, 92);
             this.btnBackspace.TabIndex = 17;
             this.btnBackspace.UseVisualStyleBackColor = false;
+            this.btnBackspace.Click += new System.EventHandler(this.btnBackspace_Click);
             // 
             // btnDivision
             // 
@@ -387,7 +396,9 @@ namespace Calculator
             this.btnDivision.Name = "btnDivision";
             this.btnDivision.Size = new System.Drawing.Size(100, 92);
             this.btnDivision.TabIndex = 16;
+            this.btnDivision.Tag = "/";
             this.btnDivision.UseVisualStyleBackColor = false;
+            this.btnDivision.Click += new System.EventHandler(this.PressingOp);
             // 
             // Form1
             // 
