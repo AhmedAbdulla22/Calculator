@@ -41,7 +41,7 @@ namespace Calculator
             this.btn0 = new System.Windows.Forms.Button();
             this.btnSigns = new System.Windows.Forms.Button();
             this.btnDot = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.btnEqual = new System.Windows.Forms.Button();
             this.btnMultiplication = new System.Windows.Forms.Button();
             this.btnSubtraction = new System.Windows.Forms.Button();
             this.btnSummation = new System.Windows.Forms.Button();
@@ -49,9 +49,12 @@ namespace Calculator
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnModule = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnX2 = new System.Windows.Forms.Button();
             this.btnBackspace = new System.Windows.Forms.Button();
             this.btnDivision = new System.Windows.Forms.Button();
+            this.btnSquare = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn1
@@ -233,19 +236,20 @@ namespace Calculator
             this.btnDot.Text = ".";
             this.btnDot.UseVisualStyleBackColor = false;
             // 
-            // button13
+            // btnEqual
             // 
-            this.button13.BackColor = System.Drawing.Color.OrangeRed;
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(360, 643);
-            this.button13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(96, 92);
-            this.button13.TabIndex = 15;
-            this.button13.Text = "=";
-            this.button13.UseVisualStyleBackColor = false;
+            this.btnEqual.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnEqual.FlatAppearance.BorderSize = 0;
+            this.btnEqual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEqual.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEqual.Location = new System.Drawing.Point(360, 643);
+            this.btnEqual.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEqual.Name = "btnEqual";
+            this.btnEqual.Size = new System.Drawing.Size(96, 92);
+            this.btnEqual.TabIndex = 15;
+            this.btnEqual.Text = "=";
+            this.btnEqual.UseVisualStyleBackColor = false;
+            this.btnEqual.Click += new System.EventHandler(this.btnEqual_Click);
             // 
             // btnMultiplication
             // 
@@ -312,11 +316,11 @@ namespace Calculator
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(32, 60);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(424, 57);
+            this.textBox1.Size = new System.Drawing.Size(424, 48);
             this.textBox1.TabIndex = 19;
             this.textBox1.Text = "0";
             // 
@@ -355,6 +359,14 @@ namespace Calculator
             this.btnModule.UseVisualStyleBackColor = false;
             this.btnModule.Click += new System.EventHandler(this.PressingOp);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnSquare);
+            this.panel1.Location = new System.Drawing.Point(-9, -17);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(495, 787);
+            this.panel1.TabIndex = 23;
+            // 
             // btnX2
             // 
             this.btnX2.BackColor = System.Drawing.Color.Silver;
@@ -368,6 +380,7 @@ namespace Calculator
             this.btnX2.Size = new System.Drawing.Size(101, 92);
             this.btnX2.TabIndex = 22;
             this.btnX2.UseVisualStyleBackColor = false;
+            this.btnX2.Click += new System.EventHandler(this.btnX2_Click);
             // 
             // btnBackspace
             // 
@@ -400,12 +413,28 @@ namespace Calculator
             this.btnDivision.UseVisualStyleBackColor = false;
             this.btnDivision.Click += new System.EventHandler(this.PressingOp);
             // 
+            // btnSquare
+            // 
+            this.btnSquare.BackColor = System.Drawing.Color.Silver;
+            this.btnSquare.FlatAppearance.BorderSize = 0;
+            this.btnSquare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSquare.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSquare.Image = global::Calculator.Properties.Resources.formula_2__1_;
+            this.btnSquare.Location = new System.Drawing.Point(150, 151);
+            this.btnSquare.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSquare.Name = "btnSquare";
+            this.btnSquare.Size = new System.Drawing.Size(101, 92);
+            this.btnSquare.TabIndex = 24;
+            this.btnSquare.UseVisualStyleBackColor = false;
+            this.btnSquare.Click += new System.EventHandler(this.btnSquare_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.ClientSize = new System.Drawing.Size(486, 746);
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ClientSize = new System.Drawing.Size(478, 763);
             this.Controls.Add(this.btnX2);
             this.Controls.Add(this.btnModule);
             this.Controls.Add(this.btnClose);
@@ -413,7 +442,7 @@ namespace Calculator
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnBackspace);
             this.Controls.Add(this.btnDivision);
-            this.Controls.Add(this.button13);
+            this.Controls.Add(this.btnEqual);
             this.Controls.Add(this.btnMultiplication);
             this.Controls.Add(this.btnSubtraction);
             this.Controls.Add(this.btnSummation);
@@ -429,11 +458,15 @@ namespace Calculator
             this.Controls.Add(this.btn3);
             this.Controls.Add(this.btn2);
             this.Controls.Add(this.btn1);
+            this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -453,7 +486,7 @@ namespace Calculator
         private System.Windows.Forms.Button btn0;
         private System.Windows.Forms.Button btnSigns;
         private System.Windows.Forms.Button btnDot;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button btnEqual;
         private System.Windows.Forms.Button btnMultiplication;
         private System.Windows.Forms.Button btnSubtraction;
         private System.Windows.Forms.Button btnSummation;
@@ -464,6 +497,8 @@ namespace Calculator
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnModule;
         private System.Windows.Forms.Button btnX2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnSquare;
     }
 }
 
