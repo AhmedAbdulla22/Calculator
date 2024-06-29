@@ -54,9 +54,14 @@ namespace Calculator
             }
 
             UpdateTextLable();
-            
+
             //Update Turn
+
+            //so it won't cause deleting 2nd num in the lable
+            if (_enTurn == Turns.firstNumber)
+            {
             _enTurn = Turns.Digit;
+            }
 
         }
 
