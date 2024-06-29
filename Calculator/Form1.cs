@@ -84,14 +84,18 @@ namespace Calculator
             else
             {
                 textBox1.Text = _Result.ToString();
-            }
 
-            Reset();
+            }
+                if (_op != Op.X2 && _op != Op.Square)
+                {
+                    
+                Reset();
+                }
+
         }
 
         private void Reset()
         {
-            
             _1stNumber = _2ndNumber = 0;
             _enTurn = Turns.firstNumber;
             _op = Op.None;
@@ -108,7 +112,7 @@ namespace Calculator
             if (_enTurn == Turns.firstNumber)
                 {
                     textBox1.Text = _1stNumber.ToString();
-                    if (_op != Op.None)
+                    if (_op != Op.None && _op != Op.X2 && _op != Op.Square)
                     {
                         textBox1.Text += _OpChar[(int)_op];
                     }
@@ -233,9 +237,11 @@ namespace Calculator
                         break;
                     case Op.X2:
                         _Result = _1stNumber * _1stNumber;
+                        _1stNumber = _Result;
                         break;
                     case Op.Square:
                         _Result = Math.Sqrt(_1stNumber);
+                        _1stNumber = _Result;
                         break;
                 }
                 
