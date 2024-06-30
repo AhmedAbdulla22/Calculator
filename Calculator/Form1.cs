@@ -287,7 +287,17 @@ namespace Calculator
 
         private void btnDot_Click(object sender, EventArgs e)
         {
-
+            Button button = (Button)sender;
+            bool hasDot = textBox1.Text.IndexOf(".") != -1;
+            
+            if (hasDot)
+            {
+                return;
+            }
+            else
+            {
+                textBox1.Text += button.Text;
+            }
         }
 
         private void button20_MouseLeave(object sender, EventArgs e)
