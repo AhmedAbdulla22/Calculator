@@ -24,12 +24,14 @@ namespace Calculator
         Turns _enTurn = Turns.firstNumber;
 
 
-        private enum Op {None = 0, Add = 1 , Sub = 2, Mul = 3 , Div = 4,Mod= 5,X2 = 6 , Square = 7};
+        private enum Op {None = 0, Add = 1 , Sub = 2, Mul = 3 , Div = 4,Mod= 5,X2 = 6 , Square = 7, Dot = 8};
         private Op _op = Op.None;
         private string _OpChar = " +-x/%";
 
         private enum Result { none = 0,invalid = 1,}
         Result _enResult = Result.none;
+
+        private bool _1stIsFloat = false,_2ndIsFloat = false;
 
         private void PressingOp(object sender, EventArgs e)
         {
@@ -109,24 +111,25 @@ namespace Calculator
                 textBox1.ForeColor = Color.Black;
             }
 
-            if (_enTurn == Turns.firstNumber)
+            if (_enTurn != Turns.Operator)
                 {
-                    textBox1.Text = _1stNumber.ToString();
-                    if (_op != Op.None && _op != Op.X2 && _op != Op.Square)
-                    {
-                        textBox1.Text += _OpChar[(int)_op];
-                    }
+                //textBox1.Text = ((float)_1stNumber).ToString();
+                //if (_op != Op.None && _op != Op.X2 && _op != Op.Square)
+                //{
+                //    textBox1.Text += _OpChar[(int)_op];
+                //}
+                
                 }
                 else if (_enTurn == Turns.Operator)
                 {
 
                     textBox1.Text = _1stNumber.ToString() + _OpChar[(int)_op];
                 }
-                else if (_enTurn == Turns.SecondNumber)
-                {
+                //else if (_enTurn == Turns.SecondNumber)
+                //{
 
-                    textBox1.Text = _1stNumber.ToString() + _OpChar[(int)_op] + _2ndNumber.ToString();
-                }
+                //    textBox1.Text = _1stNumber.ToString() + _OpChar[(int)_op] + _2ndNumber.ToString();
+                //}
 
             
         }
@@ -134,35 +137,20 @@ namespace Calculator
         private void PressingDigits(object sender , EventArgs e)
         {
             Button btn = (Button)sender;
-            double.TryParse(btn.Text, out double temp);
 
-            if(_enTurn == Turns.firstNumber && _op == Op.X2 || _op == Op.Square)
+            if (textBox1.Text[0] == '0' && btn.Text[0] == '0')
             {
-                Reset();
+                return;
             }
-
-            if (_enTurn == Turns.firstNumber)
+            else if(textBox1.Text[0] == '0')
             {
-                //to shift the 1stnumber to left
-                _1stNumber *= 10;
-                _1stNumber += temp;
-
+                textBox1.Text = btn.Text;
             }
-            else if(_enTurn == Turns.Operator || _enTurn == Turns.SecondNumber)
+            else
             {
-
-                //to shift the 2ndnumber to left
-                _2ndNumber *= 10;
-                _2ndNumber += temp;
-
-                if (_enTurn == Turns.Operator)
-                {
-                    _enTurn = Turns.SecondNumber;
-                }
+                textBox1.Text += btn.Text;
 
             }
-
-            UpdateTextLable();
         }
 
         private void button20_MouseEnter(object sender, EventArgs e)
@@ -295,6 +283,11 @@ namespace Calculator
             }
 
             UpdateTextLable();
+        }
+
+        private void btnDot_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void button20_MouseLeave(object sender, EventArgs e)
