@@ -26,7 +26,7 @@ namespace Calculator
 
         private enum Op {None = 0, Add = 1 , Sub = 2, Mul = 3 , Div = 4,Mod= 5,X2 = 6 , Square = 7, Dot = 8};
         private Op _op = Op.None;
-        private string _OpChar = " +-x/%";
+        private string _OpChar = "*+-x/%";
 
         private enum Result { none = 0,invalid = 1,}
         Result _enResult = Result.none;
@@ -36,8 +36,13 @@ namespace Calculator
         private void PressingOp(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            char.TryParse(btn.Tag.ToString(), out char op); 
-            
+            char.TryParse(btn.Tag.ToString(), out char op);
+
+            if (char.IsDigit(textBox1.Text[textBox1.TextLength -1]))
+            {
+            textBox1.Text += op;
+            }
+
             switch(op)
             {
                 case '+':
@@ -60,15 +65,7 @@ namespace Calculator
                     break;
             }
 
-            UpdateTextLable();
 
-            //Update Turn
-
-            //so it won't cause deleting 2nd num in the lable
-            if (_enTurn == Turns.firstNumber)
-            {
-            _enTurn = Turns.Operator;
-            }
 
         }
 
