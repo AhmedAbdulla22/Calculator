@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Calculator
 {
@@ -26,7 +27,7 @@ namespace Calculator
 
         private enum Op {None = 0, Add = 1 , Sub = 2, Mul = 3 , Div = 4,Mod= 5,X2 = 6 , Square = 7, Dot = 8};
         private Op _op = Op.None;
-        private string _OpChar = "*+-x/%";
+        private char[] _OpChar = { '*', '+', '-', 'x', '/', '%' };
 
         private enum Result { none = 0,invalid = 1,}
         Result _enResult = Result.none;
@@ -123,7 +124,7 @@ namespace Calculator
                 else if (_enTurn == Turns.Operator)
                 {
 
-                    textBox1.Text = _1stNumber.ToString() + _OpChar[(int)_op];
+                  //  textBox1.Text = _1stNumber.ToString() + _OpChar[(int)_op];
                 }
                 //else if (_enTurn == Turns.SecondNumber)
                 //{
@@ -277,10 +278,16 @@ namespace Calculator
         {
             Button button = (Button)sender;
 
-            //is there is Dot in first num?
-            bool hasDot = textBox1.Text.IndexOf(".") != -1;
+            // Find the last index of the dot
+            int lastIndexOfDot = textBox1.Text.LastIndexOf('.');
             
-            if (hasDot)
+            // Find the last index of any operator
+            int lastIndexOfOperator = textBox1.Text.LastIndexOfAny(_OpChar);
+
+            // Check if there is a dot and if it appears after the last operator
+            bool hasDot = lastIndexOfDot != -1 && lastIndexOfOperator < lastIndexOfDot;
+
+            if (hasDot || !char.IsDigit(textBox1.Text[textBox1.TextLength - 1]))
             {
                 return;
             }
