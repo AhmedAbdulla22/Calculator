@@ -98,7 +98,10 @@ namespace Calculator
 
         private void Reset()
         {
-            _1stNumber = _2ndNumber = 0;
+            //reset textbox
+            textBox1.Text = "0";
+
+            _1stNumber = _2ndNumber = _Result = 0;
             _enTurn = Turns.firstNumber;
             _op = Op.None;
             _enResult = Result.none;
@@ -169,30 +172,18 @@ namespace Calculator
 
         private void btnBackspace_Click(object sender, EventArgs e)
         {
-            if (_enTurn == Turns.firstNumber)
+            if (textBox1.TextLength >= 1)
             {
-            _1stNumber = Math.Floor(_1stNumber / 10);
-            }
-            else if(_enTurn == Turns.Operator)
-            {
-                _op = Op.None;
-
-                //set turn to 1st num
-                _enTurn = Turns.firstNumber;
-
+            textBox1.Text = textBox1.Text.Substring(0,textBox1.TextLength - 1);
+                if (textBox1.TextLength == 0)
+                {
+                    textBox1.Text = "0";
+                }
             }
             else
             {
-            _2ndNumber = Math.Floor(_2ndNumber / 10);
-                //set turn to Operator if 2nd num became 0
-                if (_2ndNumber == 0)
-                {
-                _enTurn = Turns.Operator;
-                }
-
+                return;
             }
-
-            UpdateTextLable();
         }
 
         private void Form1_Load(object sender, EventArgs e)
