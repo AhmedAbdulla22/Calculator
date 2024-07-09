@@ -138,11 +138,11 @@ namespace Calculator
         {
             Button btn = (Button)sender;
 
-            if (textBox1.Text[0] == '0' && btn.Text[0] == '0')
+            if (textBox1.Text[0] == '0' && btn.Text[0] == '0' && textBox1.TextLength == 1)
             {
                 return;
             }
-            else if(textBox1.Text[0] == '0')
+            else if(textBox1.Text[0] == '0' && textBox1.TextLength == 1)
             {
                 textBox1.Text = btn.Text;
             }
@@ -288,6 +288,8 @@ namespace Calculator
         private void btnDot_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
+
+            //is there is Dot in first num?
             bool hasDot = textBox1.Text.IndexOf(".") != -1;
             
             if (hasDot)
