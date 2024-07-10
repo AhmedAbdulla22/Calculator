@@ -193,16 +193,41 @@ namespace Calculator
         {
             var txt = textBox1.Text;
             string[] numsTxt = txt.Split(_OpChar);
-            char[] opChars = txt.Where(c => c == '+' || c == '-').ToArray();
-            //if 10+10 for example
-            double.TryParse(txt,out _1stNumber);
+            char[] opChars = txt.Where(c => _OpChar.Contains(c)).ToArray();
+
+            for (int i = 0; i < numsTxt.Length - 1; i++)
+            {
+                double.TryParse(numsTxt[i], out double firstNum);
+                double.TryParse(numsTxt[i+1], out double SecondNum);
+                switch(opChars[i])
+                {
+                    case '+':
+                        _Result = firstNum + SecondNum;
+                        break;
+                    case '-':
+                        _Result = firstNum - SecondNum;
+                        break;
+                    case '*':
+                        _Result = firstNum * SecondNum;
+                        break;
+                    case '/':
+                        _Result = firstNum / SecondNum;
+                        break;
+                }
+
+                numsTxt[i + 1] = _Result.ToString();
+            }
+                
+            textBox1.Text = _Result.ToString();
+
+
         }
 
         private void btnEqual_Click(object sender, EventArgs e)
         {
             
                 CalculateResult();
-                UpdateResult();                             
+                                         
         }
 
         private void btnX2_Click(object sender, EventArgs e)
