@@ -189,55 +189,20 @@ namespace Calculator
             this.Height = 363;
         }
 
+        private void CalculateResult()
+        {
+            var txt = textBox1.Text;
+            string[] numsTxt = txt.Split(_OpChar);
+            char[] opChars = txt.Where(c => c == '+' || c == '-').ToArray();
+            //if 10+10 for example
+            double.TryParse(txt,out _1stNumber);
+        }
+
         private void btnEqual_Click(object sender, EventArgs e)
         {
-            if(_enTurn == Turns.SecondNumber || _op == Op.Square || _op == Op.X2)
-            {
-                switch(_op)
-                {
-                    case Op.Add:
-                        _Result = _1stNumber + _2ndNumber;
-                        break;
-                    case Op.Sub:
-                        _Result = _1stNumber - _2ndNumber;
-                        break;
-                    case Op.Mul:
-                        _Result = _1stNumber * _2ndNumber;
-                        break;
-                    case Op.Div:
-                        if (_1stNumber == 0 || _2ndNumber == 0)
-                        {
-                            _enResult = Result.invalid;
-                        }
-                        else
-                        {
-                        _Result = _1stNumber / _2ndNumber;
-                        }
-                        break;
-                    case Op.Mod:
-                        _Result = _1stNumber % _2ndNumber;
-                        break;
-                    case Op.X2:
-                        _Result = _1stNumber * _1stNumber;
-                        _1stNumber = _Result;
-                        break;
-                    case Op.Square:
-                        _Result = Math.Sqrt(_1stNumber);
-                        _1stNumber = _Result;
-                        break;
-                }
-                
+            
+                CalculateResult();
                 UpdateResult();                             
-
-
-
-            }
-            
-                
-                
-                    
-            
-
         }
 
         private void btnX2_Click(object sender, EventArgs e)
