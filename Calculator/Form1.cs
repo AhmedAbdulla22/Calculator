@@ -214,11 +214,17 @@ namespace Calculator
                         _Result = firstNum / SecondNum;
                         break;
                 }
-
+                
                 numsTxt[i + 1] = _Result.ToString();
             }
-                
-            textBox1.Text = _Result.ToString();
+
+            if (_Result == double.PositiveInfinity)
+            {
+                textBox1.Text = "Invalid,Can't Divide On Zero!";
+                textBox1.ForeColor = Color.Red;
+            }
+            else
+            textBox1.Text = textBox1.Text + " = " + _Result.ToString();
 
 
         }
